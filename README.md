@@ -51,7 +51,7 @@ from tfvan import VanTiny, preprocess_input
 
 
 def _prepare(example):
-    # Observation: +1.3% top1 accuracy in tiny model with antialias=True
+    # Observation: +2.2% top1 accuracy in tiny and +0.9% in small model with antialias=True
     image = tf.image.resize(example['image'], (248, 248), method=tf.image.ResizeMethod.BICUBIC)
     image = tf.image.central_crop(image, 0.9)
     image = preprocess_input(image)
